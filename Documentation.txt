@@ -1,0 +1,48 @@
+Installation:
+	- git clone https://github.com/fiware-cybercaptor/mulval.git 
+	- Follow the instructions in the README
+	- Add leakage_rules.P file to kb subdirectory
+	- Create a subdirectory called bitcoin in the mulval directory with 
+	add_leakage.py script and network.csv graph.
+	
+
+Creating Testcases:
+	cd testcases
+	python2 generate.py  <output_path> <num_hosts>
+Adding Leakage Facts:
+	cd bitcoin
+	python2 add_leakage.py <path_to_testcase>
+
+Running Mulval:
+	(Create a subdirectory in the Mulval directory, say output)
+	cd output
+	../utils/riskAssess.sh <path_to_testcase> --cvss -a ../kb/leakage_rules.P
+	../utils/render.sh
+
+Analyzing Attack Graph:
+	(In the Mulval directory)
+	python3 analyze.py <path_to_testcase>
+
+
+In order to simulate leakage, we use the Bitcoin-OTC network which is a
+who-trusts-whom network of people who trade using Bitcoin. We assume that
+trust is also the main factor for sharing credentials with another person,
+i.e. leakage value is the same as trust value. To generate trust values between
+each of the users we use the Fairness-Goodness algorithm as explained in paper [1].
+Mulval uses access complexity to generate the probability of an attack.
+So, we convert trust values to their equivalent access complexities.
+A high trust value corresponds to a low access-complexity as the probability
+of the user having access credentials for another user is higher, hence easier
+the attack. Similarly, a low trust value corresponds to a high access-complexity.
+Finally, the leakage rules are appended to the Prolog file containing the testcase.
+
+The rules in kb/leakage_rules.P are required to use the leakage values in
+generating the attack graph. Mulval uses a set of facts called primitives to
+describe a computer network. We use the primitive "leakage" to describe the
+credential leakage between a network of users. Leakage is integrated into
+the attack graph by assuming that once a user's credentials have been 
+compromised his/her account on any machine will also be compromised.
+
+
+[1] S. Kumar, F. Spezzano, V.S. Subrahmanian, C. Faloutsos. Edge Weight Prediction
+in Weighted Signed Networks. IEEE International Conference on Data Mining (ICDM), 2016. 

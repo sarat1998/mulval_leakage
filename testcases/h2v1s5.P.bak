@@ -130,7 +130,6 @@ inSubnet(fileServers_host_9, fileServers).
 inSubnet(fileServers_host_10, fileServers).
 inCompetent(fileServers_host_10_victim).
 hasAccount(fileServers_host_10_victim, fileServers_host_10, user).
-
 isClient(clientApplication).
 vulExists(fileServers_host_10, fileServers_host_10_clientVul_0,clientApplication).
 vulProperty(fileServers_host_10_clientVul_0, remoteExploit, privEscalation).
@@ -305,69 +304,3 @@ hacl(historian_host_10, dmz_host_10, httpProtocol, httpPort).
 hacl(dmz_host_10, historian_host_10, httpProtocol, httpPort).
 hacl(historian_host_10, dmz_host_10, nfsProtocol, nfsPort).
 hacl(dmz_host_10, historian_host_10, nfsProtocol, nfsPort).
-
-
-leakage(fileServers_host_10_victim, workStation_host_10_victim, h).
-leakage(fileServers_host_9_victim, workStation_host_10_victim, h).
-leakage(workStation_host_9_victim, workStation_host_9_victim, h).
-leakage(dmz_host_9_victim, subnet1_host_9_victim, h).
-leakage(subnet1_host_9_victim, subnet1_host_9_victim, h).
-leakage(fileServers_host_9_victim, fileServers_host_10_victim, h).
-leakage(fileServers_host_10_victim, fileServers_host_9_victim, h).
-leakage(subnet1_host_10_victim, dmz_host_9_victim, m).
-leakage(fileServers_host_9_victim, workStation_host_9_victim, h).
-leakage(subnet1_host_9_victim, subnet1_host_10_victim, h).
-leakage(workStation_host_10_victim, dmz_host_10_victim, h).
-leakage(subnet1_host_9_victim, dmz_host_9_victim, m).
-leakage(workStation_host_9_victim, subnet1_host_10_victim, h).
-leakage(workStation_host_10_victim, fileServers_host_10_victim, h).
-leakage(subnet1_host_10_victim, fileServers_host_10_victim, h).
-leakage(subnet1_host_9_victim, workStation_host_10_victim, h).
-leakage(workStation_host_10_victim, workStation_host_9_victim, h).
-leakage(fileServers_host_9_victim, fileServers_host_9_victim, h).
-leakage(subnet1_host_10_victim, workStation_host_9_victim, h).
-leakage(subnet1_host_10_victim, subnet1_host_10_victim, h).
-leakage(subnet1_host_9_victim, fileServers_host_9_victim, h).
-leakage(workStation_host_9_victim, fileServers_host_9_victim, h).
-leakage(fileServers_host_10_victim, subnet1_host_10_victim, h).
-leakage(workStation_host_9_victim, dmz_host_10_victim, h).
-leakage(subnet1_host_10_victim, subnet1_host_9_victim, h).
-leakage(fileServers_host_10_victim, dmz_host_9_victim, m).
-leakage(dmz_host_9_victim, fileServers_host_9_victim, h).
-leakage(workStation_host_10_victim, subnet1_host_9_victim, h).
-leakage(dmz_host_10_victim, dmz_host_10_victim, h).
-leakage(dmz_host_10_victim, workStation_host_9_victim, h).
-leakage(dmz_host_10_victim, workStation_host_10_victim, h).
-leakage(dmz_host_9_victim, workStation_host_10_victim, h).
-leakage(dmz_host_10_victim, fileServers_host_9_victim, h).
-leakage(fileServers_host_10_victim, dmz_host_10_victim, h).
-leakage(workStation_host_9_victim, dmz_host_9_victim, m).
-leakage(workStation_host_10_victim, dmz_host_9_victim, m).
-leakage(subnet1_host_9_victim, workStation_host_9_victim, h).
-leakage(fileServers_host_9_victim, subnet1_host_9_victim, h).
-leakage(subnet1_host_10_victim, dmz_host_10_victim, h).
-leakage(subnet1_host_9_victim, fileServers_host_10_victim, h).
-leakage(dmz_host_9_victim, fileServers_host_10_victim, h).
-leakage(dmz_host_9_victim, subnet1_host_10_victim, h).
-leakage(dmz_host_9_victim, workStation_host_9_victim, h).
-leakage(workStation_host_9_victim, subnet1_host_9_victim, h).
-leakage(dmz_host_9_victim, dmz_host_10_victim, h).
-leakage(dmz_host_10_victim, subnet1_host_10_victim, h).
-leakage(fileServers_host_10_victim, subnet1_host_9_victim, h).
-leakage(dmz_host_10_victim, subnet1_host_9_victim, h).
-leakage(dmz_host_10_victim, fileServers_host_10_victim, h).
-leakage(workStation_host_10_victim, subnet1_host_10_victim, h).
-leakage(fileServers_host_9_victim, dmz_host_10_victim, h).
-leakage(subnet1_host_10_victim, workStation_host_10_victim, h).
-leakage(subnet1_host_9_victim, dmz_host_10_victim, h).
-leakage(workStation_host_10_victim, workStation_host_10_victim, h).
-leakage(workStation_host_9_victim, workStation_host_10_victim, h).
-leakage(fileServers_host_10_victim, workStation_host_9_victim, h).
-leakage(dmz_host_9_victim, dmz_host_9_victim, h).
-leakage(dmz_host_10_victim, dmz_host_9_victim, m).
-leakage(subnet1_host_10_victim, fileServers_host_9_victim, h).
-leakage(fileServers_host_10_victim, fileServers_host_10_victim, m).
-leakage(fileServers_host_9_victim, dmz_host_9_victim, m).
-leakage(workStation_host_10_victim, fileServers_host_9_victim, h).
-leakage(fileServers_host_9_victim, subnet1_host_10_victim, h).
-leakage(workStation_host_9_victim, fileServers_host_10_victim, h).

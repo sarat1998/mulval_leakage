@@ -1,0 +1,26 @@
+attackerLocated(internet).
+attackGoal(execCode( _, _)).
+
+hacl(webServer,dbServer,dbProtocol,dbPort).
+hacl(workStation,webServer,httpProtocol,httpPort).
+hacl(workStation,internet,httpProtocol,httpPort).
+isClient('IE').
+inCompetent(secretary).
+isWebServer(webServer).
+accessMaliciousInput(workStation,secretary,'IE').
+hasAccount(secretary,workStation,normalAccount).
+vulExists(workStation,'CVE-2009-1918','IE',remoteExploit,privEscalation).
+cvss('CVE-2009-1918',l).
+execCode(workStation,normalAccount).
+hacl(internet,webServer,httpProtocol,httpPort).
+netAccess(webServer,httpProtocol,httpPort).
+networkServiceInfo(webServer,httpd,httpProtocol,httpPort,apache).
+vulExists(webServer,'CVE-2006-3747',httpd,remoteExploit,privEscalation).
+cvss('CVE-2006-3747',h).
+execCode(webServer,apache).
+hacl(workStation,dbServer,dbProtocol,dbPort).
+netAccess(dbServer,dbProtocol,dbPort).
+networkServiceInfo(dbServer,mySQL,dbProtocol,dbPort,root).
+vulExists(dbServer,'CVE-2009-2446',mySQL,remoteExploit,privEscalation).
+cvss('CVE-2009-2446',l).
+execCode(dbServer,root).

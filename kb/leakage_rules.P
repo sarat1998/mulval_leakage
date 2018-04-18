@@ -1,0 +1,15 @@
+primitive(leakage(_fromPrincipal, _toPrincipal, _attackComplexity)).
+
+interaction_rule(
+  (principalCompromised(ToPrincipal) :-
+    leakage(FromPrincipal, ToPrincipal, AttackComplexity),
+    principalCompromised(FromPrincipal)),
+  rule_desc('Credential Leakage', cvss_ac(AttackComplexity))).
+
+interaction_rule(
+   (execCode(Host, Perm) :-
+	principalCompromised(Victim),
+	hasAccount(Victim, Host, Perm),
+	canAccessHost(Host)),
+   rule_desc('When a principal is compromised any machine he has an account on will also be compromised',
+             'likely')).

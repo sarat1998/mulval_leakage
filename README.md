@@ -45,3 +45,10 @@ make
 ## Documentation
 
 MulVAL original documentation (installation and user guide) can be found in [doc/README](doc/README)
+
+## Run with leakage
+cd output
+../utils/riskAssess.sh ../testcases/h2v1s5.P --cvss -a ../kb/leakage_rules.P 
+../utils/render.sh
+
+The attack graph will be generated in output folder.

@@ -2,3 +2,5 @@
 *.xwam
 *.o
 *.DS_Store
+*.swp
+output
